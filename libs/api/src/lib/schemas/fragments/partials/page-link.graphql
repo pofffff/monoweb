@@ -1,0 +1,13 @@
+fragment pageLink on PageRecord {
+  id
+  title
+  description(markdown: true)
+  sold
+  pageSlug
+  image {
+    ...image1
+  }
+  parent {
+    pageSlug
+  }
+}

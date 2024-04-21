@@ -1,0 +1,12 @@
+fragment footer on FooterRecord {
+  copywrite
+  socialMediaTitle
+  socialMedia {
+    url
+    title
+    id
+    image {
+      ...image1
+    }
+  }
+}

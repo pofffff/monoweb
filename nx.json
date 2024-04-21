@@ -45,5 +45,47 @@
       }
     }
   },
+  "targetDefaults": {
+    "lint": {
+      "configurations": {
+        "ci": {
+          "command": "eslint . --quiet"
+        },
+        "fix": {
+          "command": "eslint . --quiet --fix"
+        }
+      }
+    },
+    "stylelint": {
+      "cache": true,
+      "executor": "nx:run-commands",
+      "inputs": [
+        "default",
+        "^default",
+        "{workspaceRoot}/.stylelintrc.json",
+        "{projectRoot}/.stylelintrc.json",
+        {
+          "externalDependencies": ["stylelint"]
+        }
+      ],
+      "options": {
+        "cwd": "{projectRoot}",
+        "command": "stylelint ."
+      },
+      "configurations": {
+        "ci": {
+          "command": "stylelint . --quiet"
+        },
+        "fix": {
+          "command": "stylelint . --quiet --fix"
+        }
+      }
+    },
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    }
+  },
   "nxCloudAccessToken": "NGE5MWY3ZDUtYWY4Mi00ZjE5LWFlOGItMDE3MDcwMGNhZTMwfHJlYWQtd3JpdGU="
 }

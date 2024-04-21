@@ -1,0 +1,10 @@
+fragment mediaBlock on MediaBlockRecord {
+  id
+  big
+  image {
+    ...image43
+  }
+  video {
+    ...video
+  }
+}

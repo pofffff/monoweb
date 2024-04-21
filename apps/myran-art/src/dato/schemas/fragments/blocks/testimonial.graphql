@@ -1,0 +1,15 @@
+fragment testimonialBlock on TestimonialRecord {
+  id
+  quote
+  authorName
+  authorTitle
+  background {
+    hex
+  }
+  cta {
+    ...cta
+  }
+  image {
+    ...image1
+  }
+}

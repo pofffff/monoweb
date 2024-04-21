@@ -1,0 +1,7 @@
+# Known words
+stylelint
+stylelintrc
+SVGR
+clsx
+archoleat
+

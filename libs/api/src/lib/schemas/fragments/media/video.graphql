@@ -1,0 +1,11 @@
+fragment video on FileField {
+  alt
+  url
+  title
+  video {
+    mp4Url
+    mp4Low: mp4Url(res: low)
+    streamingUrl
+    thumbnailUrl
+  }
+}

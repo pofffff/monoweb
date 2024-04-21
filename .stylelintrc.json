@@ -1,0 +1,59 @@
+{
+  "ignoreFiles": [
+    "**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/*.css"
+      ],
+      "extends": [
+        "stylelint-config-standard",
+        "@stylistic/stylelint-config",
+        "@archoleat/stylelint-config-extended-scss"
+      ],
+      "rules": {
+        "prettier/prettier": [
+          true,
+          {
+            "singleQuote": false
+          }
+        ],
+        "declaration-empty-line-before": null,
+        "plugin/no-low-performance-animation-properties": null
+      }
+    },
+    {
+      "files": [
+        "**/*.scss"
+      ],
+      "extends": [
+        "stylelint-config-standard-scss",
+        "@stylistic/stylelint-config",
+        "@archoleat/stylelint-config-extended-scss"
+      ],
+      "rules": {
+        "prettier/prettier": [
+          true,
+          {
+            "singleQuote": false
+          }
+        ],
+        "declaration-empty-line-before": null,
+        "scss/comment-no-loud": null,
+        "scss/dollar-variable-colon-newline-after": null,
+        "scss/at-function-named-arguments": [
+          "always",
+          {
+            "ignoreFunctions": [
+              "min"
+            ]
+          }
+        ],
+        "plugin/no-low-performance-animation-properties": null,
+        "scss/at-import-partial-extension": null
+      }
+    }
+  ],
+  "rules": {}
+}

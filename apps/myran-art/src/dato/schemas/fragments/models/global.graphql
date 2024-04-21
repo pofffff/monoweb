@@ -1,0 +1,3 @@
+fragment global on GlobalRecord {
+  sold
+}

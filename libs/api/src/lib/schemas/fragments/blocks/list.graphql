@@ -1,0 +1,9 @@
+fragment listBlock on ListRecord {
+  id
+  listType
+  size
+  pagination
+  links {
+    ...pageLink
+  }
+}

@@ -1,0 +1,20 @@
+fragment page on PageRecord {
+  id
+  pageSlug
+  title
+  description(markdown: true)
+  image {
+    ...image169
+  }
+  sold
+  content {
+    ...contentBlock
+    ...galleryBlock
+    ...heroBlock
+    ...listBlock
+    ...mediaBlock
+    ...showcaseBlock
+    ...testimonialBlock
+    ...pageListBlock
+  }
+}
