@@ -1,27 +1,31 @@
-import { NavItemFragment, SiteFragment } from 'types'
+import { HeadingH2 } from 'components/_elements';
+import {
+  NavItemFragment, SiteFragment,
+} from 'types';
+
 import {
   StyledHeader,
   StyledHeading,
-  StyledLogoLink,
   StyledNav,
   StyledNavItem,
   StyledTopHeader,
-} from './styled-header'
-import { HeadingH2 } from 'components/_elements'
+} from './styled-header';
 
 interface Props {
-  menu: NavItemFragment[]
-  site: SiteFragment
+  menu: NavItemFragment[];
+  site: SiteFragment;
 }
 
-export const Header: React.FC<Props> = ({ menu, site }) => {
+export const Header: React.FC<Props> = ({
+  menu, site,
+}) => {
   return (
     <StyledHeader>
       <StyledTopHeader>
         {/* <StyledLogoLink href={'/'}>
           <LogoSvg />
         </StyledLogoLink> */}
-        <StyledHeading href={'/'}>
+        <StyledHeading href="/">
           <HeadingH2>{site.globalSeo?.siteName}</HeadingH2>
         </StyledHeading>
       </StyledTopHeader>
@@ -34,9 +38,9 @@ export const Header: React.FC<Props> = ({ menu, site }) => {
                 {item.title}
               </StyledNavItem>
             )
-          )
+          );
         })}
       </StyledNav>
     </StyledHeader>
-  )
-}
+  );
+};

@@ -1,11 +1,12 @@
-import { breakpoints, colors, spacings } from 'styles'
-
-import { getTextColor } from 'utils'
-import styled from 'styled-components'
+import styled from 'styled-components';
+import {
+  breakpoints, colors, spacings,
+} from 'styles';
+import { getTextColor } from 'utils';
 
 export const StyledHero = styled.div`
   width: 100%;
-`
+`;
 
 export const StyledInnerContainer = styled.div<{ background?: string }>`
   display: flex;
@@ -17,11 +18,11 @@ export const StyledInnerContainer = styled.div<{ background?: string }>`
     grid-template-columns: auto 450px;
     grid-template-rows: unset;
   }
-`
+`;
 
 interface HeroContentProps {
-  background?: string
-  $center: boolean
+  background?: string;
+  $center: boolean;
 }
 
 export const HeroContent = styled.div<HeroContentProps>`
@@ -31,24 +32,24 @@ export const HeroContent = styled.div<HeroContentProps>`
   justify-content: center;
 
   ${({ background }) => {
-    if (!background) return
+    if (!background) return;
     const textColor = getTextColor(
       background,
       colors.contentLight,
       colors.contentDark,
-    )
+    );
     return (
-      background &&
-      `
+      background
+      && `
         background: ${background};
         color: ${textColor};
     `
-    )
+    );
   }};
 
   ${({ $center }) =>
-    $center &&
-    `
+    $center
+    && `
         align-items: center;
 
     `};
@@ -57,4 +58,4 @@ export const HeroContent = styled.div<HeroContentProps>`
   }
   @media screen and (min-width: ${breakpoints.desktop}) {
   }
-`
+`;

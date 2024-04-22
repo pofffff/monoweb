@@ -1,40 +1,54 @@
-import { PageListBlockFragment } from 'types'
-import { StyledPageList } from './styled-page-list'
-import { Grid } from 'components/_elements'
-import { OverlayCard, StackedCard } from 'components/_cards'
-import { getHref } from 'utils'
-import { useId } from 'react'
-import { aspectRatios } from 'styles'
+import { useId } from 'react';
 
-interface Props extends PageListBlockFragment {}
+import {
+  OverlayCard, StackedCard,
+} from 'components/_cards';
+import { Grid } from 'components/_elements';
+import { aspectRatios } from 'styles';
+import { PageListBlockFragment } from 'types';
+import { getHref } from 'utils';
 
-export const PageList: React.FC<Props> = ({ pageType, listType }) => {
-  const uid = useId()
-  const list = pageType?.children
+import { StyledPageList } from './styled-page-list';
+
+type Props = PageListBlockFragment;
+
+export const PageList: React.FC<Props> = ({
+  pageType, listType,
+}) => {
+  const uid = useId();
+  const list = pageType?.children;
   if (!list || list.length < 1) {
-    return null
+    return null;
   }
 
   const OverlayListMapper = (item, _index) => {
-    const { id, title, pageSlug, image, description, parent, sold } = item
-    const href = getHref({ parent: parent.pageSlug, target: pageSlug })
+    const {
+      id, title, pageSlug, image, description, parent, sold,
+    } = item;
+    const href = getHref({
+      parent: parent.pageSlug, target: pageSlug,
+    });
     return (
       <OverlayCard
         key={`card-${id}`}
+        aspectRatio={aspectRatios.listItem}
+        description={description}
         href={href}
         image={image}
-        title={title}
-        sold={sold}
-        description={description}
         sizes="(min-width: 768px) 100vw, 400px"
-        aspectRatio={aspectRatios.listItem}
+        sold={sold}
+        title={title}
       />
-    )
-  }
+    );
+  };
 
   const SideBySideListMapper = (item, _index) => {
-    const { id, title, pageSlug, image, description, parent } = item
-    const href = getHref({ parent: parent.pageSlug, target: pageSlug })
+    const {
+      id, title, pageSlug, image, description, parent,
+    } = item;
+    const href = getHref({
+      parent: parent.pageSlug, target: pageSlug,
+    });
     return (
       // <SideBySideCard
       //   key={`card-${id}`}
@@ -44,25 +58,29 @@ export const PageList: React.FC<Props> = ({ pageType, listType }) => {
       //   description={description}
       // />
       <p>Side by side</p>
-    )
-  }
+    );
+  };
 
   const StackedListMapper = (item, _index) => {
-    const { id, title, pageSlug, image, description, parent, sold } = item
-    const href = getHref({ parent: parent.pageSlug, target: pageSlug })
+    const {
+      id, title, pageSlug, image, description, parent, sold,
+    } = item;
+    const href = getHref({
+      parent: parent.pageSlug, target: pageSlug,
+    });
     return (
       <StackedCard
         key={`card-${id}`}
+        aspectRatio={aspectRatios.listItem}
+        description={description}
         href={href}
         image={image}
-        title={title}
-        sold={sold}
-        description={description}
         sizes="(min-width: 768px) 100vw, 400px"
-        aspectRatio={aspectRatios.listItem}
+        sold={sold}
+        title={title}
       />
-    )
-  }
+    );
+  };
 
   return (
     <StyledPageList>
@@ -72,5 +90,5 @@ export const PageList: React.FC<Props> = ({ pageType, listType }) => {
         {listType === 'stacked' && list.map(StackedListMapper)}
       </Grid>
     </StyledPageList>
-  )
-}
+  );
+};

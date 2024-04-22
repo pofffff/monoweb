@@ -1,13 +1,8 @@
-import { Header } from "../components";
-
-
 interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-export default function RootLayout({
-  children,
-}: RootLayoutProps ) {
+export default function RootLayout({ children }: RootLayoutProps) {
   // const {menu, footer, site} = useSite();
   return (
     <html lang="en">

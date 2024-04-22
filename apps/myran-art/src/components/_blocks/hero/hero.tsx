@@ -1,18 +1,20 @@
 import {
   ButtonPrimary,
+  DynamicImage,
   HeadingH1,
   HeadingH2,
   Markdown,
-  DynamicImage,
-} from 'components'
-import { HeroContent, StyledHero, StyledInnerContainer } from './styled-hero'
+} from 'components';
+import { aspectRatios } from 'styles';
+import { HeroBlockFragment } from 'types';
 
-import { HeroBlockFragment } from 'types'
-import { aspectRatios } from 'styles'
+import {
+  HeroContent, StyledHero, StyledInnerContainer,
+} from './styled-hero';
 
 interface Props extends HeroBlockFragment {
-  priority: boolean
-  index: number
+  priority: boolean;
+  index: number;
 }
 
 export const Hero: React.FC<Props> = ({
@@ -29,7 +31,7 @@ export const Hero: React.FC<Props> = ({
   priority,
   index,
 }) => {
-  const isH1 = index === 0
+  const isH1 = index === 0;
   return (
     <StyledHero>
       <StyledInnerContainer background={contentBackground?.hex}>
@@ -47,16 +49,16 @@ export const Hero: React.FC<Props> = ({
           )}
         </HeroContent>
         <DynamicImage
-          priority={priority}
+          aspectRatioDesktop={aspectRatios.heroDesktop}
           aspectRatioMobile={aspectRatios.heroMobile}
           aspectRatioTablet={aspectRatios.heroTablet}
-          aspectRatioDesktop={aspectRatios.heroDesktop}
-          mobileImage={mobileImage}
-          tabletImage={tabletImage}
           desktopImage={desktopImage}
+          mobileImage={mobileImage}
+          priority={priority}
           sizes="(min-width: 1025px) 920px, (max-width: 1024px) 450px"
+          tabletImage={tabletImage}
         />
       </StyledInnerContainer>
     </StyledHero>
-  )
-}
+  );
+};

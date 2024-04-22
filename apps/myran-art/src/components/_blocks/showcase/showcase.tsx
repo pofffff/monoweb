@@ -1,10 +1,15 @@
-import { HeadingH2, ImageEl, Markdown } from 'components/_elements'
-import { ShowcaseBlockFragment } from 'types'
-import { StyledShowcase, StyledShowcaseContent } from './styled-showcase'
-import { HeadingH3 } from 'components/_elements/headings/heading-h3'
-import { aspectRatios } from 'styles'
+import {
+  HeadingH2, ImageEl, Markdown,
+} from 'components/_elements';
+import { HeadingH3 } from 'components/_elements/headings/heading-h3';
+import { aspectRatios } from 'styles';
+import { ShowcaseBlockFragment } from 'types';
 
-interface Props extends ShowcaseBlockFragment {}
+import {
+  StyledShowcase, StyledShowcaseContent,
+} from './styled-showcase';
+
+type Props = ShowcaseBlockFragment;
 
 export const Showcase: React.FC<Props> = ({
   alignImageLeft,
@@ -16,8 +21,8 @@ export const Showcase: React.FC<Props> = ({
 }) => {
   return (
     <StyledShowcase
-      background={background?.hex}
       $left={alignImageLeft ? true : false}
+      background={background?.hex}
     >
       <StyledShowcaseContent>
         <HeadingH2>{title}</HeadingH2>
@@ -25,10 +30,10 @@ export const Showcase: React.FC<Props> = ({
         <Markdown>{description}</Markdown>
       </StyledShowcaseContent>
       <ImageEl
-        sizes="(min-width: 768px) 100vw, 620px"
         aspectRatio={aspectRatios.showcase}
         image={image ?? null}
+        sizes="(min-width: 768px) 100vw, 620px"
       />
     </StyledShowcase>
-  )
-}
+  );
+};

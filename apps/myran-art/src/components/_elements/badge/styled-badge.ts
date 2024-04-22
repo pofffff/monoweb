@@ -1,5 +1,7 @@
-import styled from 'styled-components'
-import { colors, contentSpacing } from 'styles'
+import styled from 'styled-components';
+import {
+  colors, contentSpacing,
+} from 'styles';
 
 export const StyledBadge = styled.div`
   display: flex;
@@ -15,4 +17,4 @@ export const StyledBadge = styled.div`
   span {
     font-size: 0.85rem;
   }
-`
+`;

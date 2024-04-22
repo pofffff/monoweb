@@ -1,9 +1,11 @@
-import styled from 'styled-components'
-import { breakpoints, spacings } from 'styles'
+import styled from 'styled-components';
+import {
+  breakpoints, spacings,
+} from 'styles';
 
 interface StyledShowcaseProps {
-  background?: string
-  $left: boolean
+  background?: string;
+  $left: boolean;
 }
 
 export const StyledShowcase = styled.div<StyledShowcaseProps>`
@@ -30,7 +32,7 @@ export const StyledShowcase = styled.div<StyledShowcaseProps>`
       flex: 1;
     }
   }
-`
+`;
 export const StyledShowcaseContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -38,4 +40,4 @@ export const StyledShowcaseContent = styled.div`
   @media screen and (min-width: ${breakpoints.tablet}) {
     /* padding: ${spacings.S}; */
   }
-`
+`;

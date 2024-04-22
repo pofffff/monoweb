@@ -1,8 +1,8 @@
-import styled from 'styled-components'
-import { breakpoints } from 'styles'
+import styled from 'styled-components';
+import { breakpoints } from 'styles';
 
 interface StyledImageProps {
-  $aspectRatio?: string
+  $aspectRatio?: string;
 }
 
 export const StyledMobileImage = styled.div<StyledImageProps>`
@@ -11,8 +11,8 @@ export const StyledMobileImage = styled.div<StyledImageProps>`
   width: 100%;
 
   ${({ $aspectRatio }) =>
-    $aspectRatio &&
-    `
+    $aspectRatio
+    && `
         aspect-ratio: ${$aspectRatio};
     `};
 
@@ -23,7 +23,7 @@ export const StyledMobileImage = styled.div<StyledImageProps>`
   @media screen and (min-width: ${breakpoints.desktop}) {
     display: none;
   }
-`
+`;
 
 export const StyledTabletImage = styled.div<StyledImageProps>`
   position: relative;
@@ -32,8 +32,8 @@ export const StyledTabletImage = styled.div<StyledImageProps>`
   display: none;
 
   ${({ $aspectRatio }) =>
-    $aspectRatio &&
-    `
+    $aspectRatio
+    && `
         aspect-ratio: ${$aspectRatio};
     `};
 
@@ -44,7 +44,7 @@ export const StyledTabletImage = styled.div<StyledImageProps>`
   @media screen and (min-width: ${breakpoints.desktop}) {
     display: none;
   }
-`
+`;
 
 export const StyledDesktopImage = styled.div<StyledImageProps>`
   position: relative;
@@ -53,15 +53,15 @@ export const StyledDesktopImage = styled.div<StyledImageProps>`
   display: none;
 
   ${({ $aspectRatio }) =>
-    $aspectRatio &&
-    `
+    $aspectRatio
+    && `
         aspect-ratio: ${$aspectRatio};
     `};
 
   @media screen and (min-width: ${breakpoints.desktop}) {
     display: block;
   }
-`
+`;
 
 export const StyledImage = styled.div<StyledImageProps>`
   position: relative;
@@ -69,8 +69,8 @@ export const StyledImage = styled.div<StyledImageProps>`
   width: 100%;
 
   ${({ $aspectRatio }) =>
-    $aspectRatio &&
-    `
+    $aspectRatio
+    && `
         aspect-ratio: ${$aspectRatio};
     `};
-`
+`;

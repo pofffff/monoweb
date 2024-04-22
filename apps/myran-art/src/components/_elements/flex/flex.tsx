@@ -1,9 +1,9 @@
-import { StyledFlex } from './styled-flex'
+import { StyledFlex } from './styled-flex';
 
 export interface Props {
-  children?: React.ReactNode
-  className?: string
-  align?: 'stretch' | 'center' | 'start' | 'end' | 'baseline'
+  children?: React.ReactNode;
+  className?: string;
+  align?: 'stretch' | 'center' | 'start' | 'end' | 'baseline';
 }
 export const Flex: React.FC<Props> = ({
   children,
@@ -15,5 +15,5 @@ export const Flex: React.FC<Props> = ({
     <StyledFlex align={align} className={className}>
       {children}
     </StyledFlex>
-  )
-}
+  );
+};

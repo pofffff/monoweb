@@ -1,54 +1,44 @@
 {
-  "ignoreFiles": [
-    "**/*"
-  ],
+  "ignoreFiles": ["**/*"],
+  "plugins": ["@stylistic/stylelint-plugin"],
   "overrides": [
     {
-      "files": [
-        "**/*.css"
-      ],
+      "files": ["**/*.css"],
       "extends": [
         "stylelint-config-standard",
         "@stylistic/stylelint-config",
         "@archoleat/stylelint-config-extended-scss"
       ],
       "rules": {
-        "prettier/prettier": [
-          true,
-          {
-            "singleQuote": false
-          }
-        ],
+        "@stylistic/linebreaks": "unix",
+        "@stylistic/named-grid-areas-alignment": true,
+        "@stylistic/declaration-colon-newline-after": null,
+        "@stylistic/indentation": null,
+        "prettier/prettier": [true, { "singleQuote": false }],
         "declaration-empty-line-before": null,
         "plugin/no-low-performance-animation-properties": null
       }
     },
     {
-      "files": [
-        "**/*.scss"
-      ],
+      "files": ["**/*.scss"],
       "extends": [
         "stylelint-config-standard-scss",
         "@stylistic/stylelint-config",
         "@archoleat/stylelint-config-extended-scss"
       ],
       "rules": {
-        "prettier/prettier": [
-          true,
-          {
-            "singleQuote": false
-          }
-        ],
+        "@stylistic/linebreaks": "unix",
+        "@stylistic/named-grid-areas-alignment": true,
+        "@stylistic/declaration-colon-newline-after": null,
+        "@stylistic/indentation": null,
+        "@stylistic/block-closing-brace-newline-after": null,
+        "prettier/prettier": [true, { "singleQuote": false }],
         "declaration-empty-line-before": null,
         "scss/comment-no-loud": null,
         "scss/dollar-variable-colon-newline-after": null,
         "scss/at-function-named-arguments": [
           "always",
-          {
-            "ignoreFunctions": [
-              "min"
-            ]
-          }
+          { "ignoreFunctions": ["min"] }
         ],
         "plugin/no-low-performance-animation-properties": null,
         "scss/at-import-partial-extension": null

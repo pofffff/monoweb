@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { spacings } from 'styles'
+import styled from 'styled-components';
+import { spacings } from 'styles';
 
 export const StyledPageLayout = styled.div`
   display: flex;
@@ -12,4 +12,4 @@ export const StyledPageLayout = styled.div`
   width: 100%;
 
   /* padding-inline: ${spacings.S}; */
-`
+`;

@@ -1,26 +1,27 @@
-import Link from 'next/link'
-import styled from 'styled-components'
-import { breakpoints, spacings } from 'styles'
-import { ListSize } from 'types'
+import styled from 'styled-components';
+import {
+  breakpoints, spacings,
+} from 'styles';
+import { ListSize } from 'types';
 
 interface StyledListProps {
-  size: ListSize
+  size: ListSize;
 }
 
 function getWidth(size: ListSize) {
   switch (size) {
     case 'big':
-      return '350px'
+      return '350px';
     case 'regular':
-      return '200px'
+      return '200px';
     case 'small':
-      return '100px'
+      return '100px';
   }
 }
 
 export const StyledList = styled.div<StyledListProps>`
   /* padding-inline: ${spacings.S}; */
-`
+`;
 
 export const StyledVerticalList = styled.ul`
   list-style-type: none;
@@ -41,7 +42,7 @@ export const StyledVerticalList = styled.ul`
 
   @media screen and (min-width: ${breakpoints.desktop}) {
   }
-`
+`;
 export const StyledListItem = styled.div<StyledListProps>`
   flex: 0 0 auto;
   scroll-snap-align: start;
@@ -55,4 +56,4 @@ export const StyledListItem = styled.div<StyledListProps>`
     text-decoration: underline;
     cursor: pointer;
   }
-`
+`;

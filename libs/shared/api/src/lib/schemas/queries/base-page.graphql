@@ -1,0 +1,16 @@
+query BasePage($locale: SiteLocale) {
+  allNavItems(locale: $locale, filter: { parent: { exists: "" } }) {
+    ...navItem
+  }
+  footer(locale: $locale) {
+    ...footer
+  }
+
+  global(locale: $locale) {
+    ...global
+  }
+
+  _site(locale: $locale) {
+    ...site
+  }
+}

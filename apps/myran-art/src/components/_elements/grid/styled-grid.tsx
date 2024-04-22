@@ -1,10 +1,11 @@
-import { breakpoints, contentSpacing } from 'styles'
-
-import styled from 'styled-components'
+import styled from 'styled-components';
+import {
+  breakpoints, contentSpacing,
+} from 'styles';
 
 export interface StyledGridProps {
-  $maxColumns?: string
-  $spacing?: boolean
+  $maxColumns?: string;
+  $spacing?: boolean;
 }
 export const StyledGrid = styled.div<StyledGridProps>`
   display: grid;
@@ -23,4 +24,4 @@ export const StyledGrid = styled.div<StyledGridProps>`
       minmax(0, 1fr)
     );
   }
-`
+`;

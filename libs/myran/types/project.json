@@ -1,0 +1,19 @@
+{
+  "name": "myran-types",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/myran/types/src",
+  "projectType": "library",
+  "tags": ["scope:myran"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/myran/types",
+        "main": "libs/myran/types/src/index.ts",
+        "tsConfig": "libs/myran/types/tsconfig.lib.json",
+        "assets": ["libs/myran/types/*.md"]
+      }
+    }
+  }
+}

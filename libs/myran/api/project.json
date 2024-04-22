@@ -1,0 +1,31 @@
+{
+  "name": "mryran-api",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/myran/api/src",
+  "projectType": "library",
+  "tags": ["scope:myran"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/myran/api",
+        "main": "libs/myran/api/src/index.ts",
+        "tsConfig": "libs/myran/api/tsconfig.lib.json",
+        "assets": ["libs/myran/api/*.md"]
+      }
+    },
+    "graphql-codegen": {
+      "executor": "nx:run-commands",
+      "configurations": {
+        "development": {
+          "command": "graphql-codegen --config libs/myran/api/src/lib/codegen.ts --overwrite"
+        },
+        "git": {
+          "command": "graphql-codegen --config libs/myran/api/src/lib/codegen.ts --errors-only"
+        }
+      },
+      "defaultConfiguration": "development"
+    }
+  }
+}

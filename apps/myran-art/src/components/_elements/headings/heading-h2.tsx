@@ -1,8 +1,8 @@
-import { StyledHeadingH2 } from './styled-heading'
+import { StyledHeadingH2 } from './styled-heading';
 
 interface Props {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 export const HeadingH2: React.FC<Props> = ({ children }) => {
-  return <StyledHeadingH2>{children}</StyledHeadingH2>
-}
+  return <StyledHeadingH2>{children}</StyledHeadingH2>;
+};

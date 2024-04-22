@@ -1,9 +1,9 @@
-import { FooterFragment } from 'types'
+import { FooterFragment } from 'types';
 
 interface Props {
-  footer: FooterFragment
+  footer: FooterFragment;
 }
 
 export const Footer: React.FC<Props> = ({}) => {
-  return <p>Footer</p>
-}
+  return <p>Footer</p>;
+};

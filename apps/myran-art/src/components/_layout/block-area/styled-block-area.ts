@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { spacings } from 'styles'
+import styled from 'styled-components';
+import { spacings } from 'styles';
 
 export const StyledBlockArea = styled.div`
   display: flex;
@@ -13,4 +13,4 @@ export const StyledBlockArea = styled.div`
   > *:last-child {
     padding-block-end: ${spacings.L};
   }
-`
+`;

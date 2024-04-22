@@ -1,17 +1,17 @@
 import {
   ApolloClient,
+  createHttpLink,
   InMemoryCache,
   PossibleTypesMap,
-  createHttpLink,
-} from '@apollo/client'
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
-import { config } from 'config'
-import { setContext } from '@apollo/client/link/context'
+import { config } from 'config';
 
 export const getClient = (possibleTypes: PossibleTypesMap) => {
-  const uri = `${config.DATO_BASE_URL}${config.DATO_PREVIEW ? 'preview/' : ''}`
+  const uri = `${config.DATO_BASE_URL}${config.DATO_PREVIEW ? 'preview/' : ''}`;
 
-  const httpLink = createHttpLink({ uri })
+  const httpLink = createHttpLink({ uri });
 
   const authLink = setContext((_, { headers }) => {
     return {
@@ -19,11 +19,11 @@ export const getClient = (possibleTypes: PossibleTypesMap) => {
         ...headers,
         Authorization: config.DATO_TOKEN ? `Bearer ${config.DATO_TOKEN}` : '',
       },
-    }
-  })
+    };
+  });
 
   return new ApolloClient({
-    link: authLink.concat(httpLink),
     cache: new InMemoryCache({ possibleTypes }),
-  })
-}
+    link: authLink.concat(httpLink),
+  });
+};

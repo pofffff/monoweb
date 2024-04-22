@@ -1,14 +1,21 @@
-import { ImageEl, Video } from 'components/_elements'
-import { MediaBlockFragment } from 'types'
-import { StyledInnerContainer, StyledMedia } from './styled-media'
-import { aspectRatios } from 'styles'
+import {
+  ImageEl, Video,
+} from 'components/_elements';
+import { aspectRatios } from 'styles';
+import { MediaBlockFragment } from 'types';
 
-interface Props extends MediaBlockFragment {}
+import {
+  StyledInnerContainer, StyledMedia,
+} from './styled-media';
 
-export const Media: React.FC<Props> = ({ big, image, video }) => {
+type Props = MediaBlockFragment;
+
+export const Media: React.FC<Props> = ({
+  big, image, video,
+}) => {
   const sizes = big
     ? '(min-width: 768px) 100vw, 600px'
-    : '(min-width: 768px) 100vw, 400px'
+    : '(min-width: 768px) 100vw, 400px';
 
   return (
     <StyledMedia>
@@ -20,8 +27,8 @@ export const Media: React.FC<Props> = ({ big, image, video }) => {
             sizes={sizes}
           />
         )}
-        {video && <Video src={video.url} preload={'none'} />}
+        {video && <Video preload="none" src={video.url} />}
       </StyledInnerContainer>
     </StyledMedia>
-  )
-}
+  );
+};

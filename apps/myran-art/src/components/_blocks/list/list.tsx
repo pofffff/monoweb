@@ -1,12 +1,13 @@
-import { ListBlockFragment, ListSize } from 'types'
-import { VerticalList } from './vertical-list'
-import { StyledList } from './styled-list'
+import {
+  ListBlockFragment, ListSize,
+} from 'types';
 
-interface Props extends ListBlockFragment {}
+import { StyledList } from './styled-list';
+import { VerticalList } from './vertical-list';
 
-const listTypes = {
-  vertical: 'Vertical scroll',
-}
+type Props = ListBlockFragment;
+
+const listTypes = { vertical: 'Vertical scroll' };
 
 export const List: React.FC<Props> = ({
   listType,
@@ -17,8 +18,8 @@ export const List: React.FC<Props> = ({
   return (
     <StyledList size={size as ListSize}>
       {listType === listTypes.vertical && (
-        <VerticalList size={size as ListSize} items={links} />
+        <VerticalList items={links} size={size as ListSize} />
       )}
     </StyledList>
-  )
-}
+  );
+};

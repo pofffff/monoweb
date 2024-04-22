@@ -1,22 +1,22 @@
-import styled from 'styled-components'
-import { breakpoints, spacings } from 'styles'
+import styled from 'styled-components';
+import { breakpoints } from 'styles';
 
 interface StyledMediaProps {
-  $big: boolean
+  $big: boolean;
 }
 export const StyledMedia = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-`
+`;
 
 export const StyledInnerContainer = styled.div<StyledMediaProps>`
   width: 100%;
   /* width: 100%; */
   ${({ $big }) =>
-    !$big &&
-    `
+    !$big
+    && `
     width: 250px;
     `}
 
@@ -25,9 +25,9 @@ export const StyledInnerContainer = styled.div<StyledMediaProps>`
     flex-direction: row;
 
     ${({ $big }) =>
-      !$big &&
-      `
+      !$big
+      && `
     width: 400px;
     `}
   }
-`
+`;

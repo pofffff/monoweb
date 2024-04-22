@@ -1,10 +1,10 @@
-import Markdown from 'markdown-to-jsx'
-import { spacings } from 'styles'
-import styled from 'styled-components'
+import Markdown from 'markdown-to-jsx';
+import styled from 'styled-components';
+import { spacings } from 'styles';
 
 interface MarkdownProps {
-  $center: boolean
-  children?: string | null
+  $center: boolean;
+  children?: string | null;
 }
 
 export const StyledMarkDown = styled(Markdown)<MarkdownProps>`
@@ -20,9 +20,9 @@ export const StyledMarkDown = styled(Markdown)<MarkdownProps>`
     margin-block-end: ${spacings.XS};
 
     ${({ $center }) =>
-      $center &&
-      `
+      $center
+      && `
       text-align: center;
     `}
   }
-`
+`;

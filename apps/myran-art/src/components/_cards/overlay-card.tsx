@@ -1,20 +1,23 @@
-import { Badge, HeadingH3, ImageEl, Markdown } from 'components/_elements'
-import { Image1Fragment } from 'types'
+import {
+  Badge, HeadingH3, ImageEl,
+} from 'components/_elements';
+import { useGlobal } from 'context';
+import { Image1Fragment } from 'types';
+
 import {
   StyledOverlayCard,
   StyledOverlayContent,
   StyledSold,
-} from './styled-card'
-import { useGlobal } from 'context'
+} from './styled-card';
 
 interface Props {
-  title: string
-  image: Image1Fragment
-  description: string
-  href: string
-  sold: boolean
-  sizes: string
-  aspectRatio: string
+  title: string;
+  image: Image1Fragment;
+  description: string;
+  href: string;
+  sold: boolean;
+  sizes: string;
+  aspectRatio: string;
 }
 
 export const OverlayCard: React.FC<Props> = ({
@@ -26,11 +29,11 @@ export const OverlayCard: React.FC<Props> = ({
   sizes,
   aspectRatio,
 }) => {
-  const { global } = useGlobal()
+  const { global } = useGlobal();
 
   return (
     <StyledOverlayCard href={href}>
-      <ImageEl image={image} sizes={sizes} aspectRatio={aspectRatio} />
+      <ImageEl aspectRatio={aspectRatio} image={image} sizes={sizes} />
       {sold && (
         <StyledSold>
           <Badge text={global?.sold!} />
@@ -41,5 +44,5 @@ export const OverlayCard: React.FC<Props> = ({
         {/* <Markdown>{description}</Markdown> */}
       </StyledOverlayContent>
     </StyledOverlayCard>
-  )
-}
+  );
+};

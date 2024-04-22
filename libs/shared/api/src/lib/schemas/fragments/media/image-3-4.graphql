@@ -1,0 +1,9 @@
+fragment image34 on FileField {
+  ...imageBase
+  responsiveImage(
+    locale: en
+    imgixParams: { fit: crop, crop: focalpoint, ar: "3:4", fm: jpg, q: 100 }
+  ) {
+    ...responsiveImage
+  }
+}

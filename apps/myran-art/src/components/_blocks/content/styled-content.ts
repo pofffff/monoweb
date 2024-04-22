@@ -1,14 +1,14 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 interface StyledContentProps {
-  $center: boolean
+  $center: boolean;
 }
 export const StyledContent = styled.div<StyledContentProps>`
   display: flex;
 
   ${({ $center }) =>
-    $center &&
-    `
+    $center
+    && `
     justify-content: center;
 `}
-`
+`;

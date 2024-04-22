@@ -1,15 +1,18 @@
-import { StyledGrid, StyledGridProps } from './styled-grid'
-import { gridSpacing } from 'styles'
+import { HTMLAttributes } from 'react';
 
-import { HTMLAttributes } from 'react'
+import { gridSpacing } from 'styles';
+
+import {
+  StyledGrid, StyledGridProps,
+} from './styled-grid';
 
 export interface Props extends StyledGridProps {
-  children?: React.ReactNode
-  className?: string
-  style?: HTMLAttributes<HTMLDivElement>['style']
+  children?: React.ReactNode;
+  className?: string;
+  style?: HTMLAttributes<HTMLDivElement>['style'];
 }
 
-export type GridSpacing = keyof typeof gridSpacing
+export type GridSpacing = keyof typeof gridSpacing;
 
 export const Grid: React.FC<Props> = ({
   children,
@@ -19,12 +22,12 @@ export const Grid: React.FC<Props> = ({
 }) => {
   return (
     <StyledGrid
+      $maxColumns="6"
       $spacing={$spacing}
-      $maxColumns={'6'}
       className={className}
       style={style}
     >
       {children}
     </StyledGrid>
-  )
-}
+  );
+};

@@ -1,33 +1,42 @@
-import { ListSize, PageLinkFragment } from 'types'
-import { StyledListItem, StyledVerticalList } from './styled-list'
-import { getHref } from 'utils'
-import { aspectRatios } from 'styles'
-import { StackedCard } from 'components/_cards'
+import { StackedCard } from 'components/_cards';
+import { aspectRatios } from 'styles';
+import {
+  ListSize, PageLinkFragment,
+} from 'types';
+import { getHref } from 'utils';
+
+import {
+  StyledListItem, StyledVerticalList,
+} from './styled-list';
 
 interface Props {
-  items: PageLinkFragment[]
-  size: ListSize
+  items: PageLinkFragment[];
+  size: ListSize;
 }
 
-export const VerticalList: React.FC<Props> = ({ items, size }) => {
+export const VerticalList: React.FC<Props> = ({
+  items, size,
+}) => {
   function ItemMapper(item: PageLinkFragment, index: number) {
-    const { image, title, description, sold } = item
+    const {
+      image, title, description, sold,
+    } = item;
     return (
-      <StyledListItem size={size} key={index}>
+      <StyledListItem key={index} size={size}>
         <StackedCard
-          image={image!}
-          title={title!}
           aspectRatio={aspectRatios.listItem}
-          sold={sold!}
-          sizes="350px"
           href={getHref({
             parent: item.parent?.pageSlug,
             target: item.pageSlug,
           })}
+          image={image!}
+          sizes="350px"
+          sold={sold!}
+          title={title!}
         />
       </StyledListItem>
-    )
+    );
   }
 
-  return <StyledVerticalList>{items.map(ItemMapper)}</StyledVerticalList>
-}
+  return <StyledVerticalList>{items.map(ItemMapper)}</StyledVerticalList>;
+};

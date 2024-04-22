@@ -1,0 +1,7 @@
+<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 20 20"
+  xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="currentColor">
+    <path d="m3.125 10h13.75"/>
+    <path d="m11.25 4.375 5.625 5.625-5.625 5.625"/>
+  </g>
+</svg>

@@ -4,4 +4,9 @@ stylelintrc
 SVGR
 clsx
 archoleat
-
+cssmodule
+myran
+linebreaks
+monoweb
+nocheck
+codegen

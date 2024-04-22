@@ -1,13 +1,16 @@
-import { Markdown } from 'components/_elements'
-import { ContentBlockFragment } from 'types'
-import { StyledContent } from './styled-content'
+import { Markdown } from 'components/_elements';
+import { ContentBlockFragment } from 'types';
 
-interface Props extends ContentBlockFragment {}
+import { StyledContent } from './styled-content';
 
-export const Content: React.FC<Props> = ({ center, text }) => {
+type Props = ContentBlockFragment;
+
+export const Content: React.FC<Props> = ({
+  center, text,
+}) => {
   return (
     <StyledContent $center={!!center}>
       <Markdown center={!!center}>{text}</Markdown>
     </StyledContent>
-  )
-}
+  );
+};

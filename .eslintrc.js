@@ -1,3 +1,12 @@
+const stylistic = require('@stylistic/eslint-plugin');
+
+const customized = stylistic.configs.customize({
+  arrowParens: true,
+  braceStyle: 'stroustrup',
+  jsx: true,
+  semi: true,
+});
+
 module.exports = {
   extends: ['plugin:sonarjs/recommended'],
   ignorePatterns: ['**/*', '!.eslintrc.js'],
@@ -11,60 +20,26 @@ module.exports = {
           {
             allow: [],
             checkDynamicDependenciesExceptions: [
-              '@string/blocks/server',
-              '@string/elements/server',
-              '@string/landmarks/server',
-              '@string/svg/server',
+              '@shared/blocks/server',
+              '@shared/api/server',
+              '@shared/components/server',
+              '@shared/svg/server',
             ],
             depConstraints: [
               {
-                onlyDependOnLibsWithTags: ['type:feature', 'type:util'],
-                sourceTag: 'type:app',
-                // bannedExternalImports: ['@storyblok/*'],
-              },
-              {
-                onlyDependOnLibsWithTags: ['type:feature', 'type:util'],
-                sourceTag: 'type:feature',
-                // bannedExternalImports: ['@storyblok/*'],
-              },
-              {
-                onlyDependOnLibsWithTags: ['type:util', 'type:feature'],
-                sourceTag: 'type:util',
-                // bannedExternalImports: ['@storyblok/*'],
-              },
-              {
-                onlyDependOnLibsWithTags: ['scope:website', 'scope:shared'],
-                sourceTag: 'scope:website',
+                onlyDependOnLibsWithTags: ['scope:shared', 'scope:myran'],
+                sourceTag: 'scope:myran',
               },
               {
                 onlyDependOnLibsWithTags: [
-                  'scope:infrastructure',
                   'scope:shared',
                 ],
-                sourceTag: 'scope:infrastructure',
-              },
-              {
-                onlyDependOnLibsWithTags: ['scope:ui-library', 'scope:shared'],
-                sourceTag: 'scope:ui-library',
-              },
-              {
-                onlyDependOnLibsWithTags: ['scope:test', 'scope:shared'],
-                sourceTag: 'scope:test',
-              },
-              {
-                onlyDependOnLibsWithTags: ['scope:shared'],
                 sourceTag: 'scope:shared',
-              },
-              {
-                bannedExternalImports: ['!@storyblok/*'],
-                sourceTag: 'allow:storyblok',
               },
             ],
             enforceBuildableLibDependency: true,
           },
         ],
-        // '@stylistic/array-bracket-newline': ['error', { multiline: true }],
-        // '@stylistic/function-paren-newline': ['error', { minItems: 3 }],
         '@stylistic/jsx-max-props-per-line': [
           'error',
           {
@@ -96,7 +71,6 @@ module.exports = {
             shorthandLast: true,
           },
         ],
-        // '@stylistic/max-len': ['error', { code: 80 }],
         '@stylistic/object-curly-newline': [
           'error',
           {
@@ -136,12 +110,17 @@ module.exports = {
               },
               {
                 group: 'external',
-                pattern: '@storybook/**',
+                pattern: '@apollo/**',
                 position: 'before',
               },
               {
                 group: 'internal',
-                pattern: '@string/**',
+                pattern: '@shared/**',
+                position: 'before',
+              },
+              {
+                group: 'internal',
+                pattern: '@myran/**',
                 position: 'before',
               },
             ],

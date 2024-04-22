@@ -1,24 +1,26 @@
 import {
+  Badge, ImageEl,
+} from 'components/_elements';
+import { useGlobal } from 'context';
+import { Image1Fragment } from 'types';
+
+import {
   CardDescription,
   CardTitle,
   ContentWrapper,
   StyledCardImage,
   StyledSold,
   StyledStackedCard,
-} from './styled-card'
-
-import { Image1Fragment } from 'types'
-import { Badge, ImageEl } from 'components/_elements'
-import { useGlobal } from 'context'
+} from './styled-card';
 
 interface Props {
-  title?: string
-  description?: string
-  image?: Image1Fragment
-  sizes: string
-  aspectRatio: string
-  href: string
-  sold: boolean
+  title?: string;
+  description?: string;
+  image?: Image1Fragment;
+  sizes: string;
+  aspectRatio: string;
+  href: string;
+  sold: boolean;
 }
 
 export const StackedCard: React.FC<Props> = ({
@@ -30,13 +32,13 @@ export const StackedCard: React.FC<Props> = ({
   aspectRatio,
   sold,
 }) => {
-  const { global } = useGlobal()
+  const { global } = useGlobal();
 
   return (
     <StyledStackedCard href={href}>
       <StyledCardImage>
         {image && (
-          <ImageEl image={image} sizes={sizes} aspectRatio={aspectRatio} />
+          <ImageEl aspectRatio={aspectRatio} image={image} sizes={sizes} />
         )}
         {sold && (
           <StyledSold>
@@ -50,5 +52,5 @@ export const StackedCard: React.FC<Props> = ({
         {description && <CardDescription>{description}</CardDescription>}
       </ContentWrapper>
     </StyledStackedCard>
-  )
-}
+  );
+};

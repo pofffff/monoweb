@@ -1,7 +1,7 @@
-import { TestimonialBlockFragment } from 'types'
+import { TestimonialBlockFragment } from 'types';
 
-interface Props extends TestimonialBlockFragment {}
+type Props = TestimonialBlockFragment;
 
 export const Testimonial: React.FC<Props> = ({}) => {
-  return <div>Testimonial</div>
-}
+  return <div>Testimonial</div>;
+};

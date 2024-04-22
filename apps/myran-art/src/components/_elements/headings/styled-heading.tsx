@@ -1,5 +1,7 @@
-import { breakpoints, fontSizes, sizes } from 'styles'
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
+import {
+  breakpoints, fontSizes, sizes,
+} from 'styles';
 
 interface HeadingProps {}
 
@@ -8,8 +10,8 @@ const baseHeadingStyle = () => {
     @include heading-style($font-size-h1, $color-content-primary);
     margin-block: ${sizes.s};
     font-weight: 400;
-  `
-}
+  `;
+};
 
 export const StyledHeadingH1 = styled.h1<HeadingProps>`
   ${baseHeadingStyle}
@@ -18,7 +20,7 @@ export const StyledHeadingH1 = styled.h1<HeadingProps>`
   @media screen and (min-width: ${breakpoints.desktop}) {
     font-size: ${fontSizes.h1};
   }
-`
+`;
 
 export const StyledHeadingH2ASH1 = styled.h2<HeadingProps>`
   ${baseHeadingStyle}
@@ -27,7 +29,7 @@ export const StyledHeadingH2ASH1 = styled.h2<HeadingProps>`
   @media screen and (min-width: ${breakpoints.desktop}) {
     font-size: ${fontSizes.h1};
   }
-`
+`;
 
 export const StyledHeadingH2 = styled.h2<HeadingProps>`
   ${baseHeadingStyle}
@@ -36,7 +38,7 @@ export const StyledHeadingH2 = styled.h2<HeadingProps>`
   @media screen and (min-width: ${breakpoints.desktop}) {
     font-size: ${fontSizes.h2};
   }
-`
+`;
 
 export const StyledHeadingH3 = styled.h2<HeadingProps>`
   ${baseHeadingStyle}
@@ -45,4 +47,4 @@ export const StyledHeadingH3 = styled.h2<HeadingProps>`
   @media screen and (min-width: ${breakpoints.desktop}) {
     font-size: ${fontSizes.h2};
   }
-`
+`;

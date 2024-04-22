@@ -1,8 +1,9 @@
-import { boxShadow, buttonSizes, colors, borderRadius, spacings } from 'styles'
-import styled, { css } from 'styled-components'
+import Link from 'next/link';
 
-import Link from 'next/link'
-import { getBackgroundColor, getTextColor } from 'utils'
+import styled, { css } from 'styled-components';
+import {
+  borderRadius, boxShadow, buttonSizes, colors, spacings,
+} from 'styles';
 
 const buttonStyles = css`
   cursor: pointer;
@@ -14,37 +15,41 @@ const buttonStyles = css`
   box-shadow: ${boxShadow.button};
   border-radius: ${borderRadius.button};
   margin-block-start: ${spacings.XS};
-`
+`;
 interface StyledButtonProps {
-  $bgColor?: string
-  $textColor?: string
+  $bgColor?: string;
+  $textColor?: string;
 }
 export const StyledButtonLink = styled(Link)<StyledButtonProps>`
   ${buttonStyles}
 
-  ${({ $bgColor, $textColor }) => {
+  ${({
+ $bgColor, $textColor,
+}) => {
     // $bgColor &&
     if (!$bgColor) {
-      $bgColor = colors.backgroundPrimary
+      $bgColor = colors.backgroundPrimary;
     }
     if (!$textColor) {
-      $textColor = colors.colorDark
+      $textColor = colors.colorDark;
     }
     return `
         background: ${$bgColor};
         color: ${$textColor}
 
 
-    `
+    `;
   }};
-`
+`;
 
 export const StyledButtonPrimary = styled.button<
   StyledButtonProps,
   React.ButtonHTMLAttributes<HTMLButtonElement>
 >`
   ${buttonStyles}
-  ${({ $bgColor, $textColor }) =>
+  ${({
+ $bgColor, $textColor,
+}) =>
     // $bgColor &&
     `
         background: ${$bgColor};
@@ -52,14 +57,16 @@ export const StyledButtonPrimary = styled.button<
 
 
     `};
-`
+`;
 
 export const StyledButtonSecondary = styled.button<
   StyledButtonProps,
   React.ButtonHTMLAttributes<HTMLButtonElement>
 >`
   ${buttonStyles}
-  ${({ $bgColor, $textColor }) =>
+  ${({
+ $bgColor, $textColor,
+}) =>
     // $bgColor &&
     `
         background: ${$bgColor};
@@ -67,6 +74,6 @@ export const StyledButtonSecondary = styled.button<
 
 
     `};
-`
+`;
 
-export const StyledLink = styled(Link)``
+export const StyledLink = styled(Link)``;

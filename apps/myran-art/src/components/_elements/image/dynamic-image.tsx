@@ -1,21 +1,23 @@
-import Image from 'next/image'
-import { Image1Fragment } from 'types'
+import Image from 'next/image';
+
+import { Image1Fragment } from 'types';
+
 import {
   StyledDesktopImage,
   StyledMobileImage,
   StyledTabletImage,
-} from './styled-image'
+} from './styled-image';
 
 interface Props {
-  mobileImage?: Image1Fragment | null
-  tabletImage?: Image1Fragment | null
-  desktopImage?: Image1Fragment | null
+  mobileImage?: Image1Fragment | null;
+  tabletImage?: Image1Fragment | null;
+  desktopImage?: Image1Fragment | null;
 
-  aspectRatioMobile?: string
-  aspectRatioTablet?: string
-  aspectRatioDesktop?: string
-  priority?: boolean
-  sizes?: string
+  aspectRatioMobile?: string;
+  aspectRatioTablet?: string;
+  aspectRatioDesktop?: string;
+  priority?: boolean;
+  sizes?: string;
 }
 
 export const DynamicImage: React.FC<Props> = ({
@@ -29,35 +31,39 @@ export const DynamicImage: React.FC<Props> = ({
   sizes = 'auto',
 }) => {
   if (!mobileImage && !tabletImage && !desktopImage) {
-    return null
+    return null;
   }
 
   const ImageElement: React.FC<{
-    src: string
-    base64: string
-    alt: string
-  }> = ({ src, base64, alt }) => {
-    return src && base64 ? (
-      <Image
-        src={src}
-        alt={alt}
-        sizes={sizes}
-        fill
-        priority={priority}
-        placeholder="blur"
-        blurDataURL={base64 ?? ''}
-      />
-    ) : null
-  }
+    src: string;
+    base64: string;
+    alt: string;
+  }> = ({
+    src, base64, alt,
+  }) => {
+    return src && base64
+      ? (
+        <Image
+          alt={alt}
+          blurDataURL={base64 ?? ''}
+          placeholder="blur"
+          priority={priority}
+          sizes={sizes}
+          src={src}
+          fill
+        />
+        )
+      : null;
+  };
 
   return (
     <>
       {mobileImage?.responsiveImage && (
         <StyledMobileImage $aspectRatio={aspectRatioMobile}>
           <ImageElement
-            src={mobileImage?.responsiveImage?.src ?? ''}
-            base64={mobileImage?.responsiveImage?.base64 ?? ''}
             alt={mobileImage.alt ?? ''}
+            base64={mobileImage?.responsiveImage?.base64 ?? ''}
+            src={mobileImage?.responsiveImage?.src ?? ''}
           />
         </StyledMobileImage>
       )}
@@ -65,9 +71,9 @@ export const DynamicImage: React.FC<Props> = ({
       {tabletImage?.responsiveImage && (
         <StyledTabletImage $aspectRatio={aspectRatioTablet}>
           <ImageElement
-            src={tabletImage?.responsiveImage?.src ?? ''}
-            base64={tabletImage?.responsiveImage?.base64 ?? ''}
             alt={tabletImage.alt ?? ''}
+            base64={tabletImage?.responsiveImage?.base64 ?? ''}
+            src={tabletImage?.responsiveImage?.src ?? ''}
           />
         </StyledTabletImage>
       )}
@@ -75,12 +81,12 @@ export const DynamicImage: React.FC<Props> = ({
       {desktopImage?.responsiveImage && (
         <StyledDesktopImage $aspectRatio={aspectRatioDesktop}>
           <ImageElement
-            src={desktopImage?.responsiveImage?.src ?? ''}
-            base64={desktopImage?.responsiveImage?.base64 ?? ''}
             alt={desktopImage.alt ?? ''}
+            base64={desktopImage?.responsiveImage?.base64 ?? ''}
+            src={desktopImage?.responsiveImage?.src ?? ''}
           />
         </StyledDesktopImage>
       )}
     </>
-  )
-}
+  );
+};

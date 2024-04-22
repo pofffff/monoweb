@@ -1,13 +1,18 @@
-import { colors } from 'styles'
-import { StyledButtonLink, StyledButtonPrimary } from './styled-actions'
-import { getBackgroundColor, getTextColor } from 'utils'
+import { colors } from 'styles';
+import {
+  getBackgroundColor, getTextColor,
+} from 'utils';
+
+import {
+  StyledButtonLink, StyledButtonPrimary,
+} from './styled-actions';
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode
-  href?: string
-  onClick?: () => void
-  external?: boolean
-  backgroundColor?: string
+  children: React.ReactNode;
+  href?: string;
+  onClick?: () => void;
+  external?: boolean;
+  backgroundColor?: string;
 }
 
 export const ButtonPrimary: React.FC<Props> = ({
@@ -21,8 +26,8 @@ export const ButtonPrimary: React.FC<Props> = ({
     backgroundColor,
     colors.colorLight,
     colors.colorDark,
-  )
-  const textColor = getTextColor(bgColor, colors.colorLight, colors.colorDark)
+  );
+  const textColor = getTextColor(bgColor, colors.colorLight, colors.colorDark);
 
   if (href) {
     if (external) {
@@ -36,15 +41,17 @@ export const ButtonPrimary: React.FC<Props> = ({
         >
           {children}
         </StyledButtonLink>
-      )
-    } else {
+      );
+    }
+    else {
       return (
         <StyledButtonLink $bgColor={bgColor} $textColor={textColor} href={href}>
           {children}
         </StyledButtonLink>
-      )
+      );
     }
-  } else if (onClick) {
+  }
+  else if (onClick) {
     return (
       <StyledButtonPrimary
         $bgColor={bgColor}
@@ -53,8 +60,9 @@ export const ButtonPrimary: React.FC<Props> = ({
       >
         {children}
       </StyledButtonPrimary>
-    )
-  } else {
-    return null
+    );
   }
-}
+  else {
+    return null;
+  }
+};
