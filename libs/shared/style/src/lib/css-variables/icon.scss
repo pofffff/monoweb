@@ -1,0 +1,11 @@
+:root {
+  --icon-size-small: 1rem; /* 16px */
+  --icon-size-medium: 1.25rem; /* 20px */
+  --icon-size-large: 2rem; /* 32px */
+}
+
+@include breakpoint-min("small") {
+  :root {
+    --icon-size-small: 1.25rem; /* 20px */
+  }
+}

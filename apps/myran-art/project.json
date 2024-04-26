@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/myran-art",
   "projectType": "application",
-  "tags": [],
+  "tags": ["scope:myran"],
   "// targets": "to see all targets run: nx show project myran-art --web",
   "targets": {}
 }

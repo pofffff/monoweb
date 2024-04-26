@@ -1,0 +1,60 @@
+@use "sass:map";
+
+$-breakpoints: (
+  "small": 768px,
+  "medium": 1024px,
+  "large": 1200px,
+  "max": 1920px,
+) !default;
+
+@mixin breakpoint-min($input) {
+  $breakpoint: map.get(
+    $map: $-breakpoints,
+    $key: $input,
+  );
+
+  @media screen and (width >= $breakpoint) {
+    @content;
+  }
+}
+
+@mixin breakpoint-max($input) {
+  $breakpoint: map.get(
+    $map: $-breakpoints,
+    $key: $input,
+  );
+
+  @media screen and (width < $breakpoint) {
+    @content;
+  }
+}
+
+
+@mixin breakpoint-min-max($input1, $input2) {
+  $breakpoint1: map.get(
+    $map: $-breakpoints,
+    $key: $input1,
+  );
+  $breakpoint2: map.get(
+    $map: $-breakpoints,
+    $key: $input2,
+  );
+
+  @media screen and (width >= $breakpoint1) and (width < $breakpoint2) {
+    @content;
+  }
+}
+
+// Apply styles if user prefers reduced motion
+@mixin reduced-motion($preference: reduce) {
+  @media screen and (prefers-reduced-motion: $preference) {
+    @content;
+  }
+}
+
+// Apply styles if user prefers increased contrast
+@mixin contrast($preference: more) {
+  @media (prefers-contrast: $preference) {
+    @content;
+  }
+}

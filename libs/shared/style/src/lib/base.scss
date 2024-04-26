@@ -1,0 +1,34 @@
+@use "./variables" as *;
+
+body {
+  font-family: $font-family;
+}
+
+a {
+  &:link {
+    cursor: pointer;
+
+    text-decoration: var(--link-text-decoration, none);
+  }
+
+  &:active,
+  &:link,
+  &:visited {
+    color: $color-link;
+  }
+
+  @media screen and (hover: $media-hover) {
+    &:hover {
+      text-decoration: var(--link-text-decoration-hover, underline);
+    }
+  }
+}
+
+ul,
+li {
+  list-style: none;
+
+  margin: 0;
+
+  padding: 0;
+}

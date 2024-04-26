@@ -1,0 +1,33 @@
+@use "../variables" as *;
+
+.visually-hidden {
+  position: absolute;
+
+  margin: 0;
+
+  border: 0;
+
+  block-size: 0;
+  inline-size: $deprecated-space-1;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+}
+
+.hide-scrollbars {
+  /* Firefox */
+
+  scrollbar-width: none;
+
+  /* IE and Edge */
+  -ms-overflow-style: none;
+
+  /* Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

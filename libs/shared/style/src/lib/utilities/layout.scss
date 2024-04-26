@@ -1,0 +1,42 @@
+@use "../variables" as *;
+@use "../mixins/container.scss" as *;
+@use "../mixins/media.scss" as *;
+
+.container {
+  @include container;
+}
+
+.grid {
+  @include container;
+
+  display: grid;
+
+  grid-template-columns: repeat($grid-columns, 1fr);
+  gap: $grid-gap;
+}
+
+.block-spacing {
+  &__no {
+    margin-block: $block-spacing-no;
+  }
+
+  &__xs {
+    margin-block: $block-spacing-xs;
+  }
+
+  &__sm {
+    margin-block: $block-spacing-sm;
+  }
+
+  &__md {
+    margin-block: $block-spacing-md;
+  }
+
+  &__lg {
+    margin-block: $block-spacing-lg;
+  }
+
+  &__xl {
+    margin-block: $block-spacing-xl;
+  }
+}

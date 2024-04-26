@@ -1,0 +1,11 @@
+{
+  "name": "my-plugin",
+  "version": "1.0.0",
+  "schematics": {
+    "app-structure": {
+      "factory": "./schematics/app-template/index#default",
+      "schema": "./schematics/app-template/schema.json",
+      "description": "Generate an app structure for a Next.js app"
+    }
+  }
+}

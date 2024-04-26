@@ -19,10 +19,10 @@
       "executor": "nx:run-commands",
       "configurations": {
         "development": {
-          "command": "graphql-codegen --config libs/myran/api/src/lib/codegen.ts --overwrite"
+          "command": "graphql-codegen --config libs/myran/api/codegen.ts --overwrite"
         },
         "git": {
-          "command": "graphql-codegen --config libs/myran/api/src/lib/codegen.ts --errors-only"
+          "command": "graphql-codegen --config libs/myran/api/codegen.ts --errors-only"
         }
       },
       "defaultConfiguration": "development"

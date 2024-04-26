@@ -1,0 +1,107 @@
+@use "../variables" as *;
+
+.text {
+  &__hero-header {
+    line-height: $line-height-hero-header;
+    letter-spacing: $letter-spacing-hero-header;
+
+    font-family: $font-family;
+    font-size: $font-size-hero-header;
+    font-weight: $font-weight-light;
+  }
+
+  &__page-header {
+    line-height: $line-height-page-header;
+    letter-spacing: $letter-spacing-page-header;
+
+    font-family: $font-family;
+    font-size: $font-size-page-header;
+    font-weight: $font-weight-light;
+  }
+
+  &__component-header {
+    line-height: $line-height-component-header;
+    letter-spacing: $letter-spacing-component-header;
+
+    font-family: $font-family;
+    font-size: $font-size-component-header;
+    font-weight: $font-weight-light;
+  }
+
+  &__sub-header {
+    line-height: $line-height-sub-header;
+    letter-spacing: $letter-spacing-sub-header;
+
+    font-family: $font-family;
+    font-size: $font-size-sub-header;
+    font-weight: $font-weight-light;
+  }
+
+  &__list-header {
+    line-height: $line-height-list-header;
+    letter-spacing: $letter-spacing-list-header;
+
+    font-family: $font-family;
+    font-size: $font-size-list-header;
+    font-weight: $font-weight-regular;
+  }
+
+  &__list-header--light {
+    font-weight: $font-weight-light;
+  }
+
+  &__list-header-light {
+    line-height: $line-height-list-header-light;
+
+    font-family: $font-family;
+    font-size: $font-size-list-header-light;
+    font-weight: $font-weight-light;
+  }
+
+  &__large {
+    line-height: $line-height-large;
+
+    font-family: $font-family;
+    font-size: $font-size-large;
+    font-weight: $font-weight-light;
+  }
+
+  &__body {
+    line-height: $line-height-body;
+
+    font-family: $font-family;
+    font-size: $font-size-body;
+    font-weight: $font-weight-light;
+  }
+
+  &__navigation {
+    line-height: $line-height-navigation;
+
+    font-family: $font-family;
+    font-size: $font-size-navigation;
+    font-weight: $font-weight-light;
+  }
+
+  &__navigation--active {
+    font-weight: $font-weight-regular;
+  }
+
+  &__small {
+    line-height: $line-height-small;
+
+    font-family: $font-family;
+    font-size: $font-size-small;
+    font-weight: $font-weight-regular;
+  }
+
+  &__small--light {
+    font-weight: $font-weight-light;
+  }
+
+  &__label {
+    line-height: 1;
+
+    font-size: $font-size-label;
+    font-weight: $font-weight-regular;
+  }
+}

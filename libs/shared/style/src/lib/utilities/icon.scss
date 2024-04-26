@@ -1,0 +1,40 @@
+.icon {
+  &__sm {
+    block-size: $icon-size-small;
+    inline-size: $icon-size-small;
+
+    &-x {
+      block-size: unset;
+    }
+
+    &-y {
+      inline-size: unset;
+    }
+  }
+
+  &__md {
+    block-size: $icon-size-medium;
+    inline-size: $icon-size-medium;
+
+    &-x {
+      block-size: unset;
+    }
+
+    &-y {
+      inline-size: unset;
+    }
+  }
+
+  &__lg {
+    block-size: $icon-size-large;
+    inline-size: $icon-size-large;
+
+    &-x {
+      block-size: unset;
+    }
+
+    &-y {
+      inline-size: unset;
+    }
+  }
+}

@@ -1,14 +1,13 @@
-import { config } from 'config';
+import { getClient } from '@shared/api';
+
 import {
   BasePageDocument,
-  BasePageProps,
+  type BasePageProps,
   fragmentTypes,
   PageDocument,
-  PageFragment,
-  SiteLocale,
-} from 'types';
-
-import { getClient } from '@shared/api';
+  type PageFragment,
+  type SiteLocale,
+} from '@myran/types';
 
 import { constants } from './config';
 
@@ -36,7 +35,7 @@ export const datoClient = () => {
   const getBasePage = async (): Promise<BasePageProps> => {
     const { data } = await client.query({
       query: BasePageDocument,
-      variables: { locale: config.DEFAULT_LANG as SiteLocale },
+      variables: { locale: constants.DEFAULT_LANG as SiteLocale },
     });
 
     if (!data) {
@@ -44,11 +43,11 @@ export const datoClient = () => {
     }
 
     const {
-      allNavItems, footer, _site, global,
+      allNavItems, footer, _site,
     } = data;
 
     return {
-      footer, global, menu: allNavItems, site: _site,
+      footer, menu: allNavItems, site: _site,
     };
   };
 

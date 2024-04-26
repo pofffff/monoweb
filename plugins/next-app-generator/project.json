@@ -1,0 +1,41 @@
+{
+  "name": "next-app-generator",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "plugins/next-app-generator/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/plugins/next-app-generator",
+        "main": "plugins/next-app-generator/src/index.ts",
+        "tsConfig": "plugins/next-app-generator/tsconfig.lib.json",
+        "assets": [
+          "plugins/next-app-generator/*.md",
+          {
+            "input": "./plugins/next-app-generator/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./plugins/next-app-generator/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./plugins/next-app-generator",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./plugins/next-app-generator",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    }
+  }
+}

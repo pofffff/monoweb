@@ -1,0 +1,35 @@
+.theme {
+  --color-background: transparent;
+  --color-text: $color-text;
+  --color-link: $color-link;
+
+  &--white {
+    --color-background: $color-white;
+    --color-text: $color-grey-500;
+    --color-link: $color-grey-500;
+  }
+
+  &--blue-print {
+    --color-background: $color-blue-print;
+    --color-text: $color-white;
+    --color-link: $color-white;
+  }
+
+  &--cognac {
+    --color-background: $color-cognac;
+    --color-text: $color-grey-500;
+    --color-link: $color-grey-500;
+  }
+
+  &--mustard {
+    --color-background: $color-mustard;
+    --color-text: $color-grey-500;
+    --color-link: $color-grey-500;
+  }
+
+  &--dark-espresso {
+    --color-background: $color-dark-espresso;
+    --color-text: $color-white;
+    --color-link: $color-white;
+  }
+}

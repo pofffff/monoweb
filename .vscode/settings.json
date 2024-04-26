@@ -34,7 +34,8 @@
     "javascriptreact",
     "html",
     "typescriptreact",
-    "typescript"
+    "typescript",
+    "json"
   ],
   "stylelint.enable": true,
   "stylelint.validate": ["scss", "css"],

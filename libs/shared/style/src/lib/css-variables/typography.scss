@@ -1,0 +1,111 @@
+/* CSS variables */
+:root {
+  /* Typography */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-super: 900;
+
+  /* Hero Header */
+  --font-size-hero-header: 3.75rem; /* 60px */
+  --line-height-hero-header: 1; /* 100% */
+  --letter-spacing-hero-header: -0.15rem; /* -2.4px */
+
+  /* Page Header */
+  --font-size-page-header: 2.75rem; /* 44px */
+  --line-height-page-header: 1; /* 100% */
+  --letter-spacing-page-header: -0.0825rem; /* -1.32px */
+
+  /* Component Header */
+  --font-size-component-header: 2rem; /* 32px */
+  --line-height-component-header: 1; /* 100% */
+  --letter-spacing-component-header: -0.06rem; /* -0.96px */
+
+  /* Sub Header */
+  --font-size-sub-header: 1.5rem; /* 24px */
+  --line-height-sub-header: 1.1; /* 110% */
+  --letter-spacing-sub-header: -0.06rem; /* -0.96px */
+
+  /* List Header */
+  --font-size-list-header: 1.1875rem; /* 19px */
+  --line-height-list-header: 1.2; /* 120% */
+  --letter-spacing-list-header: -0.0238rem; /* -0.38px */
+
+  /* Large Text */
+  --font-size-large: 1.0625rem; /* 17px */
+  --line-height-large: 1.2; /* 120% */
+
+  /* Body Text */
+  --font-size-body: 0.9375rem; /* 15px */
+  --line-height-body: 1.2; /* 120% */
+
+  /* Nav Text */
+  --font-size-navigation: 0.9375rem; /* 15px */
+  --line-height-navigation: 1; /* 100% */
+
+  /* Small Text */
+  --font-size-small: 0.8125rem; /* 13px */
+  --line-height-small: 1.2; /* 120% */
+
+  /* Label Text */
+  --font-size-label: 0.8125rem; /* 13px */
+  --font-size-input: 0.875rem; /* 14px */
+
+  /* Links */
+  --link-text-decoration: none;
+  --link-text-decoration-hover: underline;
+}
+
+@include breakpoint-min("small") {
+  :root {
+    /* Hero Header */
+    --font-size-hero-header: 11.25rem; /* 180px */
+    --line-height-hero-header: 0.9; /* 90% */
+    --letter-spacing-hero-header: -0.45rem; /* -7.2px */
+
+    /* Page Header */
+    --font-size-page-header: 7.5rem; /* 120px */
+    --line-height-page-header: 0.9; /* 90% */
+    --letter-spacing-page-header: -0.3rem; /* -4.8px */
+
+    /* Component Header */
+    --font-size-component-header: 5rem; /* 80px */
+    --line-height-component-header: 0.9; /* 90% */
+    --letter-spacing-component-header: -0.2rem; /* -3.2px */
+
+    /* Sub Header */
+    --font-size-sub-header: 2.5rem; /* 40px */
+    --line-height-sub-header: 1.1; /* 110% */
+    --letter-spacing-sub-header: -0.1rem; /* -1.6px */
+
+    /* List Header */
+    --font-size-list-header: 1.375rem; /* 22px */
+    --line-height-list-header: 1.2; /* 120% */
+    --letter-spacing-list-header: -0.0275rem; /* -0.44px */
+
+    /* Large Text */
+    --font-size-large: 1.1875rem; /* 19px */
+    --line-height-large: 1.2; /* 120% */
+
+    /* Body Text */
+    --font-size-body: 1rem; /* 16px */
+    --line-height-body: 1.2; /* 120% */
+
+    /* Nav Text */
+    --font-size-navigation: 1rem; /* 16px */
+    --line-height-navigation: 1; /* 100% */
+
+    /* Small Text */
+    --font-size-small: 0.875rem; /* 14px */
+    --line-height-small: 1.2; /* 120% */
+
+    /* Label Text */
+    --font-size-label: 0.75rem; /* 12px */
+    --font-size-input: 0.8125rem; /* 13px */
+
+    /* Links */
+    --link-text-decoration: none;
+    --link-text-decoration-hover: underline;
+  }
+}

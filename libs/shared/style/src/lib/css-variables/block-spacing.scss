@@ -1,0 +1,19 @@
+:root {
+  --block-spacing-no: 0;
+  --block-spacing-xs: 0.25rem; /* reference-value: 4px */
+  --block-spacing-sm: 0.75rem; /* reference-value: 12px */
+  --block-spacing-md: 1.5rem; /* reference-value: 24px */
+  --block-spacing-lg: 2.5rem; /* reference-value: 40px */
+  --block-spacing-xl: 3.75rem; /* reference-value: 60px */
+}
+
+@include breakpoint-min("small") {
+  :root {
+    --block-spacing-no: 0;
+    --block-spacing-xs: 0.25rem; /* reference-value: 4px */
+    --block-spacing-sm: 1.5rem; /* reference-value: 24px */
+    --block-spacing-md: 5rem; /* reference-value: 80px */
+    --block-spacing-lg: 7.5rem; /* reference-value: 120px */
+    --block-spacing-xl: 10rem; /* reference-value: 160px */
+  }
+}

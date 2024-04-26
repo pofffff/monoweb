@@ -1,0 +1,15 @@
+:root {
+  --duration-instant: 0;
+  --duration-fast: 100ms;
+  --duration-standard: 200ms;
+  --duration-slow: 300ms;
+}
+
+@include reduced-motion {
+  :root {
+    --duration-instant: 0;
+    --duration-fast: 0;
+    --duration-standard: 0;
+    --duration-slow: 0;
+  }
+}

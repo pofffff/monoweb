@@ -1,0 +1,15 @@
+:root {
+  --button-size-medium: 2rem; /* 32px */
+  --button-size-large: 2.5rem; /* 40px */
+  --button-size-small: 1.75rem; /* 28px */
+  --button-padding-large: 0.75rem; /* 12px */
+}
+
+@include breakpoint-min("small") {
+  :root {
+    --button-size-medium: 2.25rem; /* 36px */
+    --button-size-large: 3rem; /* 48px */
+    --button-size-small: 2.25rem; /* 36px */
+    --button-padding-large: 1rem; /* 16px */
+  }
+}

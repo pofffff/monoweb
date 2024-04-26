@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@monoweb/next-app-generator": [
+        "plugins/next-app-generator/src/index.ts"
+      ],
       "@myran/api": ["libs/myran/api/src/index.ts"],
       "@myran/components": ["libs/myran/components/src/index.ts"],
       "@myran/components/server": ["libs/myran/components/src/server.ts"],
@@ -23,6 +26,8 @@
       "@shared/components": ["libs/shared/components/src/index.ts"],
       "@shared/components/server": ["libs/shared/components/src/server.ts"],
       "@shared/config": ["libs/shared/config/src/index.ts"],
+      "@shared/style": ["libs/shared/style/src/index.ts"],
+      "@shared/style/server": ["libs/shared/style/src/server.ts"],
       "@shared/svg/server": ["libs/shared/svg/src/server.ts"],
       "@shared/types": ["libs/shared/types/src/index.ts"]
     }

@@ -1,9 +1,0 @@
-fragment imageBase on FileField {
-  alt
-  url
-  width
-  height
-  format
-  tags
-  title
-}

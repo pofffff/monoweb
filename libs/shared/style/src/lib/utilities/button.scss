@@ -1,0 +1,40 @@
+.button {
+  &__sm {
+    block-size: $button-size-small;
+    inline-size: $button-size-small;
+
+    &-x {
+      block-size: unset;
+    }
+
+    &-y {
+      inline-size: unset;
+    }
+  }
+
+  &__md {
+    block-size: $button-size-medium;
+    inline-size: $button-size-medium;
+
+    &-x {
+      block-size: unset;
+    }
+
+    &-y {
+      inline-size: unset;
+    }
+  }
+
+  &__lg {
+    block-size: $button-size-large;
+    inline-size: $button-size-large;
+
+    &-x {
+      block-size: unset;
+    }
+
+    &-y {
+      inline-size: unset;
+    }
+  }
+}

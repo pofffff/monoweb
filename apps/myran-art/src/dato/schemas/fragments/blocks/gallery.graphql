@@ -1,7 +1,0 @@
-fragment galleryBlock on GalleryRecord {
-  id
-  images {
-    ...image1
-  }
-  spacing
-}

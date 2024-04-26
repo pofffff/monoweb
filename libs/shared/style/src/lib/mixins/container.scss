@@ -1,0 +1,9 @@
+@use "../variables" as *;
+
+@mixin container {
+  margin-inline: auto;
+
+  inline-size: calc(100vi - 2 * $page-margin);
+  inline-size: calc(100dvi - 2 * $page-margin);
+  max-inline-size: min(100%, $page-max-size);
+}

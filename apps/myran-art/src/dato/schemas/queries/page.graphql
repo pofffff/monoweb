@@ -1,5 +1,0 @@
-query Page($locale: SiteLocale, $slug: String!) {
-  page(locale: $locale, filter: { pageSlug: { eq: $slug } }) {
-    ...page
-  }
-}
