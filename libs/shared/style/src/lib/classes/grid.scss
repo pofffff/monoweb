@@ -1,0 +1,41 @@
+.grid {
+  display: grid;
+  grid-template-rows: auto;
+
+  &__lage {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: $spacing-400;
+    @include breakpoint-min("medium") {
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint-min("small") {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__medium {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: $spacing-300;
+     @include breakpoint-min("medium") {
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint-min("small") {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__small {
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: $spacing-300;
+
+    @include breakpoint-min("medium") {
+    grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint-min("small") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

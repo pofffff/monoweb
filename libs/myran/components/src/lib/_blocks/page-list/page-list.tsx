@@ -1,76 +1,97 @@
-import { PageListBlockFragment } from 'types'
-import { StyledPageList } from './styled-page-list'
-import { Grid } from 'components/_elements'
-import { OverlayCard, StackedCard } from 'components/_cards'
-import { getHref } from 'utils'
-import { useId } from 'react'
-import { aspectRatios } from 'styles'
+import { useId } from 'react';
 
-interface Props extends PageListBlockFragment {}
+import clsx from 'clsx';
 
-export const PageList: React.FC<Props> = ({ pageType, listType }) => {
-  const uid = useId()
-  const list = pageType?.children
+import { aspectRatios } from '@shared/style';
+import { getHref } from '@shared/utils';
+
+import type {
+  PageListBlockFragment,
+  PageTypeChildFragment,
+} from '@myran/types';
+
+import { OverlayCard } from './overlay-card/overlay-card';
+import styles from './page-list.module.scss';
+import { StackedCard } from './stacked-card/stacked-card';
+
+type Props = PageListBlockFragment;
+
+export const PageList: React.FC<Props> = ({
+  pageType, listType,
+}) => {
+  const uid = useId();
+  const list = pageType?.children;
   if (!list || list.length < 1) {
-    return null
+    return null;
   }
 
-  const OverlayListMapper = (item, _index) => {
-    const { id, title, pageSlug, image, description, parent, sold } = item
-    const href = getHref({ parent: parent.pageSlug, target: pageSlug })
+  const OverlayListMapper = (item: PageTypeChildFragment) => {
+    const {
+      id, title, pageSlug, image, description, parent, sold,
+    } = item;
+    const href = getHref({
+      parent: parent?.pageSlug, target: pageSlug,
+    });
     return (
       <OverlayCard
         key={`card-${id}`}
+        aspectRatio={aspectRatios.square}
+        description={description}
         href={href}
         image={image}
-        title={title}
-        sold={sold}
-        description={description}
         sizes="(min-width: 768px) 100vw, 400px"
-        aspectRatio={aspectRatios.listItem}
+        sold={sold}
+        title={title}
       />
-    )
-  }
+    );
+  };
 
-  const SideBySideListMapper = (item, _index) => {
-    const { id, title, pageSlug, image, description, parent } = item
-    const href = getHref({ parent: parent.pageSlug, target: pageSlug })
-    return (
-      // <SideBySideCard
-      //   key={`card-${id}`}
-      //   href={href}
-      //   image={image}
-      //   title={title}
-      //   description={description}
-      // />
-      <p>Side by side</p>
-    )
-  }
+  // const SideBySideListMapper = (item, _index) => {
+  //   const {
+  //     id, title, pageSlug, image, description, parent,
+  //   } = item;
+  //   const href = getHref({
+  //     parent: parent.pageSlug, target: pageSlug,
+  //   });
+  //   return (
+  //     // <SideBySideCard
+  //     //   key={`card-${id}`}
+  //     //   href={href}
+  //     //   image={image}
+  //     //   title={title}
+  //     //   description={description}
+  //     // />
+  //     <p>Side by side</p>
+  //   );
+  // };
 
-  const StackedListMapper = (item, _index) => {
-    const { id, title, pageSlug, image, description, parent, sold } = item
-    const href = getHref({ parent: parent.pageSlug, target: pageSlug })
+  const StackedListMapper = (item: PageTypeChildFragment) => {
+    const {
+      id, title, pageSlug, image, description, parent, sold,
+    } = item;
+    const href = getHref({
+      parent: parent?.pageSlug, target: pageSlug,
+    });
     return (
       <StackedCard
         key={`card-${id}`}
+        aspectRatio={aspectRatios.square}
+        description={description}
         href={href}
         image={image}
-        title={title}
-        sold={sold}
-        description={description}
         sizes="(min-width: 768px) 100vw, 400px"
-        aspectRatio={aspectRatios.listItem}
+        sold={sold}
+        title={title}
       />
-    )
-  }
+    );
+  };
 
+  // TODO fix any types
   return (
-    <StyledPageList>
-      <Grid key={`Grid-${uid}`} $spacing>
-        {listType === 'overlay' && list.map(OverlayListMapper)}
-        {listType === 'side-by-side' && list.map(SideBySideListMapper)}
-        {listType === 'stacked' && list.map(StackedListMapper)}
-      </Grid>
-    </StyledPageList>
-  )
-}
+    <div className={clsx(styles.root, 'block', 'grid__large')}>
+      {listType === 'overlay' && list.map(OverlayListMapper as any)}
+      {/* {listType === 'side-by-side' && list.map(SideBySideListMapper)} */}
+      {listType === 'stacked' && list.map(StackedListMapper as any)}
+    </div>
+  );
+};

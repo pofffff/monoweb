@@ -1,0 +1,13 @@
+fragment pageTypeChild on PageRecord {
+  id
+  title
+  description
+  image {
+    ...image1
+  }
+  pageSlug
+  parent {
+    pageSlug
+  }
+  sold
+}

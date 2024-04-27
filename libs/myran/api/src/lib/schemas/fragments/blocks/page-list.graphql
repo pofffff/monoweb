@@ -4,17 +4,7 @@ fragment pageListBlock on PageListRecord {
     pageSlug
     title
     children {
-      id
-      title
-      description
-      image {
-        ...image1
-      }
-      pageSlug
-      parent {
-        pageSlug
-      }
-      sold
+      ...pageTypeChild
     }
   }
   listType

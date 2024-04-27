@@ -1,0 +1,11 @@
+:root {
+  --block-spacing-100: 1rem;
+
+@include breakpoint-min("small") {
+
+  :root{
+    --block-spacing-100: 2rem;
+  }
+}
+}
+
