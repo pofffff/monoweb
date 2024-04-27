@@ -1,9 +1,8 @@
-/* Reset */
 @import "./reset.scss";
 
 /* Variables */
 @import "./css-variables/animation.scss";
-@import "./css-variables/block-spacing.scss";
+@import "./css-variables/spacing.scss";
 @import "./css-variables/button.scss";
 @import "./css-variables/icon.scss";
 @import "./css-variables/typography.scss";
@@ -16,5 +15,5 @@
 @import "./utilities/theme.scss";
 @import "./utilities/visibility.scss";
 
-/* Base */
+
 @import "./base.scss";

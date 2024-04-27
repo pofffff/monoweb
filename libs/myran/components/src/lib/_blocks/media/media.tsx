@@ -1,27 +1,35 @@
-import { ImageEl, Video } from 'components/_elements'
-import { MediaBlockFragment } from 'types'
-import { StyledInnerContainer, StyledMedia } from './styled-media'
-import { aspectRatios } from 'styles'
+import clsx from 'clsx';
 
-interface Props extends MediaBlockFragment {}
+import {
+  Image, Video,
+} from '@shared/components/server';
+import { aspectRatios } from '@shared/style';
 
-export const Media: React.FC<Props> = ({ big, image, video }) => {
+import type { MediaBlockFragment } from '@myran/types';
+
+import styles from './media.module.scss';
+
+type Props = MediaBlockFragment;
+
+export const Media: React.FC<Props> = ({
+  big, image, video,
+}) => {
   const sizes = big
     ? '(min-width: 768px) 100vw, 600px'
-    : '(min-width: 768px) 100vw, 400px'
+    : '(min-width: 768px) 100vw, 400px';
 
   return (
-    <StyledMedia>
-      <StyledInnerContainer $big={!!big}>
+    <div className={clsx(styles.root)}>
+      <div className={clsx(styles.inner, big && styles.inner__big)}>
         {image?.responsiveImage && (
-          <ImageEl
-            aspectRatio={aspectRatios.content}
+          <Image
+            aspectRatio={aspectRatios.square}
             image={image}
             sizes={sizes}
           />
         )}
-        {video && <Video src={video.url} preload={'none'} />}
-      </StyledInnerContainer>
-    </StyledMedia>
-  )
-}
+        {video && <Video preload="none" src={video.url} />}
+      </div>
+    </div>
+  );
+};

@@ -17,26 +17,26 @@
 
 .block-spacing {
   &__no {
-    margin-block: $block-spacing-no;
+    margin-block: $spacing-000;
   }
 
   &__xs {
-    margin-block: $block-spacing-xs;
+    margin-block: $spacing-100;
   }
 
   &__sm {
-    margin-block: $block-spacing-sm;
+    margin-block: $spacing-200;
   }
 
   &__md {
-    margin-block: $block-spacing-md;
+    margin-block: $spacing-300;
   }
 
   &__lg {
-    margin-block: $block-spacing-lg;
+    margin-block: $spacing-400;
   }
 
   &__xl {
-    margin-block: $block-spacing-xl;
+    margin-block: $spacing-500;
   }
 }

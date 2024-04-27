@@ -1,18 +1,19 @@
-import {
-  ButtonPrimary,
-  HeadingH1,
-  HeadingH2,
-  Markdown,
-  DynamicImage,
-} from 'components'
-import { HeroContent, StyledHero, StyledInnerContainer } from './styled-hero'
+import Link from 'next/link';
 
-import { HeroBlockFragment } from 'types'
-import { aspectRatios } from 'styles'
+import clsx from 'clsx';
+
+import {
+  DynamicImage, Markdown,
+} from '@shared/components/server';
+import { aspectRatios } from '@shared/style';
+
+import type { HeroBlockFragment } from '@myran/types';
+
+import styles from './hero.module.scss';
 
 interface Props extends HeroBlockFragment {
-  priority: boolean
-  index: number
+  priority: boolean;
+  index: number;
 }
 
 export const Hero: React.FC<Props> = ({
@@ -29,34 +30,35 @@ export const Hero: React.FC<Props> = ({
   priority,
   index,
 }) => {
-  const isH1 = index === 0
+  const isH1 = index === 0;
+  // const Title = isH1 ? <h1>{title}</h1> : <h2>{title}</h2>;
   return (
-    <StyledHero>
-      <StyledInnerContainer background={contentBackground?.hex}>
-        <HeroContent $center={!!center} background={contentBackground?.hex}>
-          <HeadingH1 isH1={isH1}>{title}</HeadingH1>
-          <HeadingH2>{subtitle}</HeadingH2>
-          <Markdown>{description}</Markdown>
+    <div className={clsx(styles.root)}>
+      <div className={clsx(styles.inner)}>
+        <div className={clsx(styles.content)}>
+          {/* <Title /> */}
+          <h2>{subtitle}</h2>
+          {description && (<Markdown text={description} />)}
           {ctaLink?.pageSlug && ctaLabel && (
-            <ButtonPrimary
-              backgroundColor={contentBackground?.hex}
+            <Link
+              // backgroundColor={contentBackground?.hex}
               href={ctaLink.pageSlug}
             >
               {ctaLabel}
-            </ButtonPrimary>
+            </Link>
           )}
-        </HeroContent>
+        </div>
         <DynamicImage
-          priority={priority}
-          aspectRatioMobile={aspectRatios.heroMobile}
-          aspectRatioTablet={aspectRatios.heroTablet}
-          aspectRatioDesktop={aspectRatios.heroDesktop}
-          mobileImage={mobileImage}
-          tabletImage={tabletImage}
+          aspectRatioDesktop={aspectRatios.portrait}
+          aspectRatioMobile={aspectRatios.wide}
+          aspectRatioTablet={aspectRatios.wide}
           desktopImage={desktopImage}
+          mobileImage={mobileImage}
+          priority={priority}
           sizes="(min-width: 1025px) 920px, (max-width: 1024px) 450px"
+          tabletImage={tabletImage}
         />
-      </StyledInnerContainer>
-    </StyledHero>
-  )
-}
+      </div>
+    </div>
+  );
+};

@@ -1,13 +1,19 @@
-import { Markdown } from 'components/_elements'
-import { ContentBlockFragment } from 'types'
-import { StyledContent } from './styled-content'
+import clsx from 'clsx';
 
-interface Props extends ContentBlockFragment {}
+import { Markdown } from '@shared/components/server';
 
-export const Content: React.FC<Props> = ({ center, text }) => {
-  return (
-    <StyledContent $center={!!center}>
-      <Markdown center={!!center}>{text}</Markdown>
-    </StyledContent>
-  )
-}
+import { ContentBlockFragment } from '@myran/types';
+
+import styles from './content.module.scss';
+
+type Props = ContentBlockFragment;
+
+export const Content: React.FC<Props> = ({
+  center, text,
+}) => {
+  return text && (
+    <div className={clsx(styles.root, center && styles.root__center)}>
+      <Markdown text={text} />
+    </div>
+  );
+};

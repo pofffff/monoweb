@@ -1,12 +1,6 @@
 import {
-  Content,
-  Gallery,
-  Hero,
-  List,
-  Media,
-  Showcase,
-  Testimonial,
-} from '../../_blocks'
+  Content, Gallery, Hero, List, Media, Showcase, Testimonial,
+} from '../_blocks';
 
 export const blockComponents: Record<string, React.FC<any>> = {
   ContentRecord: Content,
@@ -16,4 +10,4 @@ export const blockComponents: Record<string, React.FC<any>> = {
   MediaRecord: Media,
   ShowcaseRecord: Showcase,
   TestimonialRecord: Testimonial,
-}
+};

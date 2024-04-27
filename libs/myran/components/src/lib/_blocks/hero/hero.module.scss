@@ -1,0 +1,21 @@
+.root {
+  width: 100%;
+}
+
+.inner {
+   display: flex;
+  flex-direction: column;
+
+  @include breakpoint-max("medium"){
+    display: grid;
+    grid-template-columns: auto 450px;
+    grid-template-rows: unset;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}

@@ -1,7 +1,8 @@
-import { GalleryBlockFragment } from 'types'
+import { GalleryBlockFragment } from '@myran/types';
 
-interface Props extends GalleryBlockFragment {}
+import styles from './gallery.module.scss';
+type Props = GalleryBlockFragment;
 
-export const Gallery: React.FC<Props> = ({}) => {
-  return <div>Gallery</div>
-}
+export const Gallery: React.FC<Props> = ({ images }) => {
+  return <div className={styles.root}>Gallery</div>;
+};

@@ -1,0 +1,33 @@
+.root {
+
+}
+
+.figure {
+  position: relative;
+  width: 100%;
+  display: none;
+}
+
+.mobile {
+
+  @include breakpoint-max("medium") {
+    display: none;
+  }
+
+
+
+}
+
+.tablet {
+
+    @include breakpoint-max("large") {
+      display: none;
+    }
+}
+
+.desktop {
+  display: none;
+    @include breakpoint-min("large") {
+      display: block;
+    }
+}

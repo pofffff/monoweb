@@ -14,6 +14,18 @@
         "tsConfig": "libs/shared/api/tsconfig.lib.json",
         "assets": ["libs/shared/api/*.md"]
       }
+    },
+    "graphql-codegen": {
+      "executor": "nx:run-commands",
+      "configurations": {
+        "development": {
+          "command": "graphql-codegen --config libs/shared/api/codegen.ts --overwrite"
+        },
+        "git": {
+          "command": "graphql-codegen --config libs/shared/api/codegen.ts --errors-only"
+        }
+      },
+      "defaultConfiguration": "development"
     }
   }
 }

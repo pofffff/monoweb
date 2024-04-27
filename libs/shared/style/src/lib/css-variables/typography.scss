@@ -1,6 +1,6 @@
-/* CSS variables */
 :root {
   /* Typography */
+  --font-weight-thin: 100;
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -37,11 +37,11 @@
   --line-height-large: 1.2; /* 120% */
 
   /* Body Text */
-  --font-size-body: 0.9375rem; /* 15px */
+  --font-size-body: 1rem; /* 16px */
   --line-height-body: 1.2; /* 120% */
 
   /* Nav Text */
-  --font-size-navigation: 0.9375rem; /* 15px */
+  --font-size-navigation: 1rem; /* 16px */
   --line-height-navigation: 1; /* 100% */
 
   /* Small Text */

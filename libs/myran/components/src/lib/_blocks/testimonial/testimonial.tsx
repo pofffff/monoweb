@@ -1,7 +1,9 @@
-import { TestimonialBlockFragment } from 'types'
+import type { TestimonialBlockFragment } from '@myran/types';
 
-interface Props extends TestimonialBlockFragment {}
+type Props = TestimonialBlockFragment;
 
-export const Testimonial: React.FC<Props> = ({}) => {
-  return <div>Testimonial</div>
-}
+export const Testimonial: React.FC<Props> = ({
+  quote, authorName, authorTitle,
+}) => {
+  return <div>Testimonial</div>;
+};

@@ -10,3 +10,5 @@ linebreaks
 monoweb
 nocheck
 codegen
+stroustrup
+sonarjs

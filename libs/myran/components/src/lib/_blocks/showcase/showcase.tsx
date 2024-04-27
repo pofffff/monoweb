@@ -1,10 +1,15 @@
-import { HeadingH2, ImageEl, Markdown } from 'components/_elements'
-import { ShowcaseBlockFragment } from 'types'
-import { StyledShowcase, StyledShowcaseContent } from './styled-showcase'
-import { HeadingH3 } from 'components/_elements/headings/heading-h3'
-import { aspectRatios } from 'styles'
+import clsx from 'clsx';
 
-interface Props extends ShowcaseBlockFragment {}
+import {
+  Image, Markdown,
+} from '@shared/components/server';
+import { aspectRatios } from '@shared/style';
+
+import type { ShowcaseBlockFragment } from '@myran/types';
+
+import styles from './showcase.module.scss';
+
+type Props = ShowcaseBlockFragment;
 
 export const Showcase: React.FC<Props> = ({
   alignImageLeft,
@@ -14,21 +19,22 @@ export const Showcase: React.FC<Props> = ({
   subtitle,
   image,
 }) => {
+  const backgroundStyle = background?.hex ? { backgroundColor: background.hex } as React.CSSProperties : {};
   return (
-    <StyledShowcase
-      background={background?.hex}
-      $left={alignImageLeft ? true : false}
+    <div
+      className={clsx(styles.root, alignImageLeft && styles.root__left)}
+      style={backgroundStyle}
     >
-      <StyledShowcaseContent>
-        <HeadingH2>{title}</HeadingH2>
-        <HeadingH3>{subtitle}</HeadingH3>
-        <Markdown>{description}</Markdown>
-      </StyledShowcaseContent>
-      <ImageEl
-        sizes="(min-width: 768px) 100vw, 620px"
-        aspectRatio={aspectRatios.showcase}
+      <div className={clsx(styles.content)}>
+        <h2>{title}</h2>
+        <h3>{subtitle}</h3>
+        {description && <Markdown text={description} />}
+      </div>
+      <Image
+        aspectRatio={aspectRatios.portrait}
         image={image ?? null}
+        sizes="(min-width: 768px) 100vw, 620px"
       />
-    </StyledShowcase>
-  )
-}
+    </div>
+  );
+};

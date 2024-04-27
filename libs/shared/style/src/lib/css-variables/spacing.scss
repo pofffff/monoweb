@@ -1,0 +1,25 @@
+:root {
+  --spacing-000: 0;
+  --spacing-100: 0.25rem; /* 4px */
+  --spacing-200: 0.5rem;  /* 8px */
+  --spacing-300: 0.75rem; /* 12px */
+  --spacing-400: 1rem;    /* 16px */
+  --spacing-500: 1.5rem;  /* 24px */
+  --spacing-600: 2rem;    /* 32px */
+  --spacing-700: 2.5rem;  /* 40px */
+  --spacing-800: 3.75rem;    /* 48px */
+}
+
+@include breakpoint-min("small") {
+  :root {
+    --spacing-000: 0;
+    --spacing-100: 0.25rem; /*  4px */
+    --spacing-200: 0.5rem; /*  8px */
+    --spacing-300: 1.5rem; /*  24px */
+    --spacing-400: 5rem; /*  80px */
+    --spacing-500: 7.5rem; /* 120px */
+    --spacing-600: 10rem; /*  160px */
+    --spacing-700: 12.5rem; /*  200px */
+    --spacing-800: 15rem; /*  240px */
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "myran-style",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/myran/style/src",
+  "projectType": "library",
+  "tags": ["scope:myran"],
+  "// targets": "to see all targets run: nx show project myran-style --web",
+  "targets": {}
+}

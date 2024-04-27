@@ -12,7 +12,7 @@ import {
 import { constants } from './config';
 
 export const datoClient = () => {
-  const TOKEN = process.env['DATO_TOKEN'];
+  const TOKEN = process.env['MYRAN_DATO_TOKEN'];
   if (!TOKEN) {
     throw new Error('Missing DatoCMS token');
   }
